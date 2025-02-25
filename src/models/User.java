@@ -1,3 +1,5 @@
+package models;
+
 public class User {
 
     private int userID;
@@ -28,7 +30,7 @@ public class User {
     }
 
     public void printTaskList() {
-        System.out.println("Task List for " + userName + ":");
+        System.out.println("models.Task List for " + userName + ":");
         taskList.displayTaskList();
     }
 }
