@@ -7,4 +7,8 @@ public class Node {
         this.task = task;
         this.next = null;
     }
+
+    public Task getTask() {
+        return task;
+    }
 }

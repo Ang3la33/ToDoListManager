@@ -23,12 +23,12 @@ public class User {
         taskList.addTask(new Task(task));
     }
 
-    public void markTaskAsComplete(int taskID) {
-        taskList.markTaskAsComplete(taskID);
+    public void markTaskAsCompleted(int taskIndex) {
+        taskList.markTaskAsCompleted(taskIndex);
     }
 
     public void printTaskList() {
         System.out.println("Task List for " + userName + ":");
-        taskList.displayTasks();
+        taskList.displayTaskList();
     }
 }

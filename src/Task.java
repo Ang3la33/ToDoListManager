@@ -23,7 +23,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return (isComplete ? "[✓] " : "[ ] ") + description;
+        return description + "[" + (isComplete ? "Completed" : "Pending") + "]";
     }
 
 }
