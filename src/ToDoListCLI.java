@@ -68,7 +68,15 @@ public class ToDoListCLI {
     }
 
     private static User getUserByName() {
-
+        System.out.println("Enter the user name: ");
+        String userName = scanner.nextLine().trim();
+        for (User user : users) {
+            if (user.getUserName().equalsIgnoreCase(userName)) {
+                return user;
+            }
+        }
+        System.out.println("User not found.");
+        return null;
     }
 
     private static void addTaskToUser() {
