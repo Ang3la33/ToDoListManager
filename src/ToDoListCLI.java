@@ -114,6 +114,10 @@ public class ToDoListCLI {
         user.markTaskAsCompleted(taskIndex);
     }
 
-
-
+    private static void viewUsersTasks() {
+        User user = getUserByName();
+        if (user != null) {
+            user.printTaskList();
+        }
+    }
 }
