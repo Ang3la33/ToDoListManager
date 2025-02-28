@@ -48,18 +48,31 @@ public class ToDoListCLI {
     private static void addUser() {
         System.out.println("Please enter a user name:");
         String userName = scanner.nextLine().trim();
+
         if (userName.isEmpty()) {
             System.out.println("Username cannot be empty");
             return;
         }
+
         for (User user : users) {
             if (user.getUserName().equalsIgnoreCase(userName)) {
                 System.out.println("Username is already in use");
                 return;
             }
         }
-        users.add(new User(userName));
-        System.out.println("User " + userName + " successfully added");
+
+        User newUser = new User(userName);
+        users.add(new User(newUser));
+        System.out.println("User " + newUser.getUserName() + " with ID " + newUser.getUserID() + " successfully added.");
+
+    }
+
+    private static User getUserByName() {
+
+    }
+
+    private static void addTaskToUser() {
+        User user = getUserByName();
     }
 
 }

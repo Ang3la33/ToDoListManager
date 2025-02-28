@@ -13,6 +13,11 @@ public class User {
         taskList = new TaskList();
     }
 
+    public User(User newUser) {
+        this.userID = newUser.getUserID();
+        this.userName = newUser.getUserName();
+    }
+
     public String getUserName() {
         return userName;
     }
