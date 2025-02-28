@@ -81,6 +81,39 @@ public class ToDoListCLI {
 
     private static void addTaskToUser() {
         User user = getUserByName();
+        if (user == null) {
+            return;
+        }
+        System.out.println("Please enter task description: ");
+        String taskDescription = scanner.nextLine().trim();
+        if (taskDescription.isEmpty()) {
+            System.out.println("Task description cannot be empty");
+            return;
+        }
+        user.addTask(taskDescription);
+        System.out.println("Task for" + user.getUserName() + " added successfully.");
     }
+
+    private static void markTaskAsCompleted() {
+        User user = getUserByName();
+        if (user == null) {
+            return;
+        }
+        user.printTaskList();
+        System.out.println("Enter the task number to mark as completed: ");
+        String input = scanner.nextLine().trim();
+
+        int taskIndex;
+        try {
+            taskIndex = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input: Please enter a valid task number.");
+            return;
+        }
+
+        user.markTaskAsCompleted(taskIndex);
+    }
+
+
 
 }
