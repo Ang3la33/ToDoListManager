@@ -6,3 +6,9 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# Ignore build output directories
+out/
+# Ignore mistakenly created SSH files
+eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)".pub
+
