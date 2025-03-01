@@ -16,6 +16,7 @@ public class User {
     public User(User newUser) {
         this.userID = newUser.getUserID();
         this.userName = newUser.getUserName();
+        this.taskList = new TaskList();
     }
 
     public String getUserName() {
@@ -35,7 +36,7 @@ public class User {
     }
 
     public void printTaskList() {
-        System.out.println("models.Task List for " + userName + ":");
+        System.out.println("Task List for " + userName + ":");
         taskList.displayTaskList();
     }
 }

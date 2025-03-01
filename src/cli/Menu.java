@@ -1,16 +1,17 @@
-import models.*;
+package cli;
 
-import java.util.Scanner;
+import models.User;
+
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
-public class ToDoListCLI {
+public class Menu {
 
     public static Scanner scanner = new Scanner(System.in);
     public static ArrayList<User> users = new ArrayList<>();
 
-    public static void main(String[] args) {
-        boolean isRunning = false;
+    public static void display() {
+        boolean isRunning = true;
         while (isRunning) {
             System.out.println();
             System.out.println("Welcome to the To-Do List Manager");
@@ -91,7 +92,7 @@ public class ToDoListCLI {
             return;
         }
         user.addTask(taskDescription);
-        System.out.println("Task for" + user.getUserName() + " added successfully.");
+        System.out.println("Task for " + user.getUserName() + " added successfully.");
     }
 
     private static void markTaskAsCompleted() {
